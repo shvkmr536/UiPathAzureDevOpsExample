@@ -29,7 +29,7 @@ stages:
         - task: UiPathAssets@2
           inputs:
             orchestratorConnection: 'UiPath DEV'
-            folderName: 'Shared'
+            folderName: 'shared'
             assetActionType: 'Deploy'
             csvFile: '$(Build.SourcesDirectory)\Data\Assests.csv'
 
@@ -50,7 +50,7 @@ stages:
               inputs:
                 orchestratorConnection: 'UiPath DEV'
                 packagesPath: '$(Pipeline.Workspace)\drop\'
-                folderName: 'Shared'
+                folderName: 'shared'
                 
   - stage: WorkflowAnalyser
     displayName: RunWorkflow Analyser
@@ -107,6 +107,6 @@ stages:
               testTarget: 'TestSet'
               orchestratorConnection: 'UiPATH RPABOTSWORLD'
               testSet: 'UiPathAzureDevOps_Tests'
-              folderName: 'Shared'
+              folderName: 'shared'
               testReportDestination: '$(Pipeline.Workspace)\drop\'
 
